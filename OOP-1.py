@@ -1,21 +1,33 @@
-class Stocks:
-    def __init__(self , name , symbol , prices = []):
+class Student:
+
+    def __init__(self , name , marks):
 
         self.name = name
-        self.symbol = symbol
-        self.prices = prices
-    def maxprice(self):
+        self.marks = marks
 
-        if len(self.prices) == 0:
-            print("NO PRICES GIVEN")
+    def grade(self):
 
-        return max(self.prices)
+        if self.marks > 90:
+            return "A"
+        elif 75 <= self.marks <= 89:
+            return "B"
+        elif 74 <= self.marks <= 50:
+            return "C"
+        elif 50 < self.marks:
+            return "D"
+        else:
+            return "Invalid number entered"
+
+    def group(self):
+
+        print(self.name , self.grade())
 
 
-apple = Stocks("Apple" , "APPL" , [1.20,3.45])
-marcedes = Stocks("Marcedes" , "MAR" , [1.330,5.45])
-jaguar = Stocks("Jaguar" , "JAG" , [4.8,7.465])
-samsung = Stocks("Samsung" , "SSN" , [3.20,4.65])
-hyundai = Stocks("Hyundai" , "HUN" , [4.20,3.47])
+arko = Student("Arko" , 100)
 
-max(apple.maxprice() , marcedes.maxprice())
+abesh = Student("Abesh" , 93)
+
+arko.group()
+abesh.group()
+
+
