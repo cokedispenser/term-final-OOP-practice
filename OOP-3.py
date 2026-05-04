@@ -34,20 +34,50 @@ class Rectangle:
         w = int(self.width)
 
         return h * w
+class Person:
 
-class Student:
+    def __init__(self , name , age):
+
+        self.name = name
+        self.age = age
+
+    def __str__(self):
+        return "My name is {} and I am {} years old".format(self.name , self.age)
+
+    def say_hi(self):
+
+        print(f"{self.name} says hi!")
+
+
+class Student(Person):
 
     school_name = "St. Gregory Higher Secondary School"
 
-    def __init__(self , name , grade):
+    def __init__(self , name , age , id_no , grade):
 
-        self.name = name
+        super().__init__(name , age)
+        self.id_no = id_no
         self.grade = grade
 
-
     def __str__(self):
+        return "My name is {} and I read in class {}".format(self.name , self.grade)
 
-        return "name : {} grade : {}".format( self.name , self.grade)
+    def print_roll(self):
+        print(f"My roll is {self.id_no}")
 
-print("name of school : " , Student.school_name)
-print(Student("Arko" , "11"))
+    def print_grade(self):
+        print(f"I read in class {self.grade}")
+
+
+
+
+student1 = Student("Arko" , 21 , 2410147 , 11)
+
+person1 = Person("Arko" , 21)
+
+student1.print_roll()
+student1.print_grade()
+student1.say_hi()
+
+print(person1)
+print(student1)
