@@ -22,7 +22,7 @@ class Rectangle:
 
         return "Rectangle({} X {})".format(self.width , self.height)
 
-    def perimetre(self):
+    def perimeter(self):
 
         h = int(self.height)
         w = int(self.width)
@@ -35,7 +35,19 @@ class Rectangle:
 
         return h * w
 
-rec1 = Rectangle(5 , 6)
+class Student:
 
-print(rec1)
+    school_name = "St. Gregory Higher Secondary School"
 
+    def __init__(self , name , grade):
+
+        self.name = name
+        self.grade = grade
+
+
+    def __str__(self):
+
+        return "name : {} grade : {}".format( self.name , self.grade)
+
+print("name of school : " , Student.school_name)
+print(Student("Arko" , "11"))
